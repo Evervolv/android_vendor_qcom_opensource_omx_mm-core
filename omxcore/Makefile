@@ -53,7 +53,7 @@ install:
 # ---------------------------------------------------------------------------------
 
 SRCS := src/common/qc_omx_core.c
-SRCS += src/8x50A/qc_registry_table.c
+SRCS += src/8660/qc_registry_table.c
 SRCS += src/common/omx_core_cmp.cpp
 
 LDLIBS := -lrt
