@@ -555,6 +555,30 @@ typedef enum OMX_QCOM_EXTRADATATYPE
    OMX_ExtraDataVideoEncoderSliceInfo = 0x7F000005
 } OMX_QCOM_EXTRADATATYPE;
 
+typedef enum OMX_KHRONOS_EXTENTIONS_EXTRADATATYPE
+{
+   OMX_ExtraDataKhronosExtensions_Unused=OMX_ExtraDataKhronosExtensions,
+   OMX_ExtraDataInterlaceFormat,
+}OMX_KHRONOS_EXTENTIONS_EXTRADATA;
+
+
+typedef struct  OMX_STREAMINTERLACEFORMATTYPE {
+    OMX_U32 nSize;
+    OMX_VERSIONTYPE nVersion;
+    OMX_U32 nPortIndex;
+    OMX_BOOL bInterlaceFormat;
+    OMX_U32 nInterlaceFormats;
+} OMX_STREAMINTERLACEFORMAT;
+
+typedef enum OMX_INTERLACETYPE
+{
+   OMX_InterlaceFrameProgressive,
+   OMX_InterlaceInterleaveFrameTopFieldFirst,
+   OMX_InterlaceInterleaveFrameBottomFieldFirst,
+   OMX_InterlaceFrameTopFieldFirst,
+   OMX_InterlaceFrameBottomFieldFirst
+}OMX_INTERLACEs;
+
 
 #define OMX_EXTRADATA_HEADER_SIZE 20
 
