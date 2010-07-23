@@ -28,6 +28,10 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef __OMX_QCOM_EXTENSIONS_H__
 #define __OMX_QCOM_EXTENSIONS_H__
 
+#ifdef __cplusplus
+extern "C" {
+#endif /* __cplusplus */
+
 /*============================================================================
 *//** @file OMX_QCOMExtns.h
   This header contains constants and type definitions that specify the
@@ -306,7 +310,9 @@ enum OMX_QCOM_EXTN_INDEXTYPE
     /*"OMX.QCOM.index.param.Vptype */
     OMX_QcomIndexParamVideoVp = 0x7F00000D,
 
-    OMX_QcomIndexQueryNumberOfVideoDecInstance = 0x7F00000E
+    OMX_QcomIndexQueryNumberOfVideoDecInstance = 0x7F00000E,
+
+    OMX_QcomIndexParamVideoSyncFrameDecodingMode = 0x7F00000F
 };
 
 /**
@@ -684,6 +690,14 @@ typedef struct QOMX_VIDEO_QUERY_DECODER_INSTANCES {
     OMX_U32 nNumOfInstances;
 } QOMX_VIDEO_QUERY_DECODER_INSTANCES;
 
+typedef struct QOMX_ENABLETYPE {
+    OMX_BOOL bEnable;
+} QOMX_ENABLETYPE;
 
+#define OMX_QCOM_INDEX_PARAM_VIDEO_SYNCFRAMEDECODINGMODE "OMX.QCOM.index.param.video.SyncFrameDecodingMode"
+
+#ifdef __cplusplus
+}
+#endif /* __cplusplus */
 
 #endif /* __OMX_QCOM_EXTENSIONS_H__ */
