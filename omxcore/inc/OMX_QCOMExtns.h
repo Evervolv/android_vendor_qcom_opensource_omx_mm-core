@@ -552,7 +552,8 @@ typedef enum OMX_QCOM_EXTRADATATYPE
    OMX_ExtraDataH264 = 0x7F000002,
    OMX_ExtraDataVC1 = 0x7F000003,
    OMX_ExtraDataFrameDimension = 0x7F000004,
-   OMX_ExtraDataVideoEncoderSliceInfo = 0x7F000005
+   OMX_ExtraDataVideoEncoderSliceInfo = 0x7F000005,
+   OMX_ExtraDataConcealMB = 0x7F000006
 } OMX_QCOM_EXTRADATATYPE;
 
 typedef enum OMX_KHRONOS_EXTENTIONS_EXTRADATATYPE
