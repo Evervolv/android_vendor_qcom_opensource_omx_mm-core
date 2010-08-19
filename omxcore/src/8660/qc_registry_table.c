@@ -718,7 +718,87 @@ omx_core_cb_type core[] =
     {
       "audio_decoder.adpcm"
     }
-  }
+  },
+  {
+    "OMX.qcom.audio.encoder.tunneled.aac",
+    NULL,   // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    #ifdef _ANDROID_
+    "libOmxAacEnc.so",
+    #else
+    "libmm-aenc-omxaac.so.1",
+    #endif
+    {
+      "audio_encoder.aac"
+    }
+  },
+  {
+    "OMX.qcom.audio.encoder.aac",
+    NULL,   // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    #ifdef _ANDROID_
+    "libOmxAacEnc.so",
+    #else
+    "libmm-aenc-omxaac.so.1",
+    #endif
+    {
+      "audio_encoder.aac"
+    }
+  },
+  {
+    "OMX.qcom.audio.encoder.qcelp13",
+    NULL,   // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    #ifdef _ANDROID_
+    "libOmxQcelp13Enc.so",
+    #else
+    "libmm-aenc-omxqcelp13.so.1",
+    #endif
+    {
+      "audio_encoder.qcelp13"
+    }
+  },
+  {
+    "OMX.qcom.audio.encoder.evrc",
+    NULL,   // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    #ifdef _ANDROID_
+    "libOmxEvrcEnc.so",
+    #else
+    "libmm-aenc-omxevrc.so.1",
+    #endif
+    {
+      "audio_encoder.evrc"
+    }
+  },
 };
 
 const unsigned int SIZE_OF_CORE = sizeof(core) / sizeof(omx_core_cb_type);
