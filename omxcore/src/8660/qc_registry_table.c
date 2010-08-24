@@ -460,7 +460,7 @@ omx_core_cb_type core[] =
     }
   },
   {
-    "OMX.qcom.audio.encoder.tunneled.amr",
+    "OMX.qcom.audio.encoder.tunneled.amrnb",
     NULL,   // Create instance function
     // Unique instance handle
     {
@@ -476,7 +476,7 @@ omx_core_cb_type core[] =
     "libmm-aenc-omxamr.so.1",
     #endif
     {
-      "audio_encoder.amr"
+      "audio_encoder.amrnb"
     }
   },
   {
@@ -797,6 +797,26 @@ omx_core_cb_type core[] =
     #endif
     {
       "audio_encoder.evrc"
+    }
+  },
+  {
+    "OMX.qcom.audio.encoder.amrnb",
+    NULL,   // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    #ifdef _ANDROID_
+    "libOmxAmrEnc.so",
+    #else
+    "libmm-aenc-omxamr.so.1",
+    #endif
+    {
+      "audio_encoder.amrnb"
     }
   },
 };
