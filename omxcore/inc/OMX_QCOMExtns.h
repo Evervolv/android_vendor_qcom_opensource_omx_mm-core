@@ -718,6 +718,10 @@ typedef struct QOMX_ENABLETYPE {
     OMX_BOOL bEnable;
 } QOMX_ENABLETYPE;
 
+typedef enum QOMX_VIDEO_EVENTS {
+    OMX_EventIndexsettingChanged = OMX_EventVendorStartUnused
+} QOMX_VIDEO_EVENTS;
+
 #define OMX_QCOM_INDEX_PARAM_VIDEO_SYNCFRAMEDECODINGMODE "OMX.QCOM.index.param.video.SyncFrameDecodingMode"
 
 #ifdef __cplusplus
