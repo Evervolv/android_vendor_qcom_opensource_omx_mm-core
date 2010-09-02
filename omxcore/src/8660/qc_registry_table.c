@@ -100,6 +100,26 @@ omx_core_cb_type core[] =
     }
   },
   {
+    "OMX.qcom.video.decoder.wmv",
+    NULL,   // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    #ifdef _ANDROID_
+    "libOmxVdec.so",
+    #else
+    "libmm-vdec-omxwmv.so.1",
+    #endif
+    {
+      "video_decoder.vc1"
+    }
+  },
+  {
     "OMX.qcom.video.decoder.divx",
     NULL,   // Create instance function
     // Unique instance handle
