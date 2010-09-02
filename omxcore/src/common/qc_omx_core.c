@@ -426,8 +426,6 @@ OMX_GetHandle(OMX_OUT OMX_HANDLETYPE*     handle,
     struct stat sd;
 
     *handle = NULL;
-    if(stat("/dev/pmem_adsp",&sd) != 0)
-        return OMX_ErrorInsufficientResources;
 
     cmp_index = get_cmp_index(componentName);
 
