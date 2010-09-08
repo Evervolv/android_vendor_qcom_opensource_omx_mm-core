@@ -312,7 +312,9 @@ enum OMX_QCOM_EXTN_INDEXTYPE
 
     OMX_QcomIndexQueryNumberOfVideoDecInstance = 0x7F00000E,
 
-    OMX_QcomIndexParamVideoSyncFrameDecodingMode = 0x7F00000F
+    OMX_QcomIndexParamVideoSyncFrameDecodingMode = 0x7F00000F,
+
+    OMX_QcomIndexParamVideoDecoderPictureOrder = 0x7F000010
 };
 
 /**
@@ -722,6 +724,18 @@ typedef struct QOMX_ENABLETYPE {
 typedef enum QOMX_VIDEO_EVENTS {
     OMX_EventIndexsettingChanged = OMX_EventVendorStartUnused
 } QOMX_VIDEO_EVENTS;
+
+typedef enum QOMX_VIDEO_PICTURE_ORDER {
+    QOMX_VIDEO_DISPLAY_ORDER = 0x1,
+    QOMX_VIDEO_DECODE_ORDER = 0x2
+} QOMX_VIDEO_PICTURE_ORDER;
+
+typedef struct QOMX_VIDEO_DECODER_PICTURE_ORDER {
+    OMX_U32 nSize;
+    OMX_VERSIONTYPE nVersion;
+    OMX_U32 nPortIndex;
+    QOMX_VIDEO_PICTURE_ORDER eOutputPictureOrder;
+} QOMX_VIDEO_DECODER_PICTURE_ORDER;
 
 #define OMX_QCOM_INDEX_PARAM_VIDEO_SYNCFRAMEDECODINGMODE "OMX.QCOM.index.param.video.SyncFrameDecodingMode"
 
