@@ -391,7 +391,7 @@ omx_core_cb_type core[] =
     },
     NULL,   // Shared object library handle
     #ifdef _ANDROID_
-    "libOmxQcelpDec.so",
+    "libOmxQcelp13Dec.so",
     #else
     "libmm-adec-omxQcelp13.so.1",
     #endif
@@ -411,7 +411,7 @@ omx_core_cb_type core[] =
     },
     NULL,   // Shared object library handle
     #ifdef _ANDROID_
-    "libOmxQcelpDec.so",
+    "libOmxQcelp13Dec.so",
     #else
     "libmm-adec-omxQcelp13.so.1",
     #endif
