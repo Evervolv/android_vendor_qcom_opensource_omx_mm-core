@@ -50,11 +50,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxVdec.so",
-    #else
-    "libmm-vdec-omxh264.so.1",
-    #endif
     {
       "video_decoder.avc"
     }
@@ -70,11 +66,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxVdec.so",
-    #else
-    "libmm-vdec-omxmp4.so.1",
-    #endif
     {
       "video_decoder.mpeg4"
     }
@@ -90,11 +82,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxVdec.so",
-    #else
-    "libmm-vdec-omxwmv.so.1",
-    #endif
     {
       "video_decoder.vc1"
     }
@@ -110,11 +98,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxVdec.so",
-    #else
-    "libmm-vdec-omxwmv.so.1",
-    #endif
     {
       "video_decoder.vc1"
     }
@@ -130,11 +114,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxVdec.so",
-    #else
-    "libmm-vdec-omxmp4.so.1",
-    #endif
     {
       "video_decoder.divx"
     }
@@ -150,11 +130,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxVdec.so",
-    #else
-    "libmm-vdec-omxmp4.so.1",
-    #endif
     {
       "video_decoder.divx"
     }
@@ -170,11 +146,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxVdec.so",
-    #else
-    "libmm-vdec-omxmp4.so.1",
-    #endif
     {
       "video_decoder.h263"
     }
@@ -190,11 +162,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxVenc.so",
-    #else
-    "libmm-venc-omx.so.1",
-    #endif
     {
       "video_encoder.mpeg4"
     }
@@ -210,11 +178,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxVenc.so",
-    #else
-    "libmm-venc-omx.so.1",
-    #endif
     {
       "video_encoder.h263",
     }
@@ -230,11 +194,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxVenc.so",
-    #else
-    "libmm-venc-omx.so.1",
-    #endif
     {
       "video_encoder.avc"
     }
@@ -250,11 +210,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxMp3Dec.so",
-    #else
-    "libmm-adec-omxmp3.so.1",
-    #endif
     {
       "audio_decoder.mp3"
     }
@@ -270,11 +226,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxAacDec.so",
-    #else
-    "libmm-adec-omxaac.so.1",
-    #endif
     {
       "audio_decoder.aac"
     }
@@ -290,11 +242,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxMp3Dec.so",
-    #else
-    "libmm-adec-omxmp3.so.1",
-    #endif
     {
       "audio_decoder.mp3"
     }
@@ -310,11 +258,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxAacDec.so",
-    #else
-    "libmm-adec-omxaac.so.1",
-    #endif
     {
       "audio_decoder.aac"
     }
@@ -330,11 +274,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxAmrDec.so",
-    #else
-    "libmm-adec-omxamr.so.1",
-    #endif
     {
       "audio_decoder.amrnb"
     }
@@ -350,11 +290,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxAmrDec.so",
-    #else
-    "libmm-adec-omxamr.so.1",
-    #endif
     {
       "audio_decoder.amrnb"
     }
@@ -370,11 +306,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxAacEnc.so",
-    #else
-    "libmm-aenc-omxaac.so.1",
-    #endif
     {
       "audio_encoder.aac"
     }
@@ -390,11 +322,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxQcelp13Dec.so",
-    #else
-    "libmm-adec-omxQcelp13.so.1",
-    #endif
     {
       "audio_decoder.Qcelp13"
     }
@@ -410,11 +338,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxQcelp13Dec.so",
-    #else
-    "libmm-adec-omxQcelp13.so.1",
-    #endif
     {
       "audio_decoder.Qcelp13"
     }
@@ -430,11 +354,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxEvrcDec.so",
-    #else
-    "libmm-adec-omxevrc.so.1",
-    #endif
     {
       "audio_decoder.evrc"
     }
@@ -450,11 +370,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxEvrcDec.so",
-    #else
-    "libmm-adec-omxevrc.so.1",
-    #endif
     {
       "audio_decoder.evrc"
     }
@@ -470,11 +386,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxAmrEnc.so",
-    #else
-    "libmm-aenc-omxamr.so.1",
-    #endif
     {
       "audio_encoder.amrnb"
     }
@@ -490,11 +402,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxWmaDec.so",
-    #else
-    "libmm-adec-omxwma.so.1",
-    #endif
     {
       "audio_decoder.wma"
     }
@@ -510,11 +418,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxWmaDec.so",
-    #else
-    "libmm-adec-omxwma.so.1",
-    #endif
     {
       "audio_decoder.wma"
     }
@@ -530,11 +434,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxWmaDec.so",
-    #else
-    "libmm-adec-omxwma.so.1",
-    #endif
     {
       "audio_decoder.wma"
     }
@@ -550,11 +450,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxWmaDec.so",
-    #else
-    "libmm-adec-omxwma.so.1",
-    #endif
     {
       "audio_decoder.wma"
     }
@@ -570,11 +466,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxAmrwbDec.so",
-    #else
-    "libmm-adec-omxamrwb.so.1",
-    #endif
     {
       "audio_decoder.amrwb"
     }
@@ -590,11 +482,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxAmrwbDec.so",
-    #else
-    "libmm-adec-omxamrwb.so.1",
-    #endif
     {
       "audio_decoder.amrwb"
     }
@@ -610,11 +498,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-     #ifdef _ANDROID_
     "libOmxAmrwbDec.so",
-    #else
-    "libmm-adec-omxamrwb.so.1",
-    #endif
     {
       "audio_decoder.amrwbp"
     }
@@ -630,11 +514,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxAmrwbDec.so",
-    #else
-    "libmm-adec-omxamrwb.so.1",
-    #endif
     {
       "audio_decoder.amrwbp"
     }
@@ -650,11 +530,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxQcelp13Enc.so",
-    #else
-    "libmm-aenc-omxqcelp13.so.1",
-    #endif
     {
       "audio_encoder.qcelp13"
     }
@@ -670,11 +546,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxEvrcEnc.so",
-    #else
-    "libmm-aenc-omxevrc.so.1",
-    #endif
     {
       "audio_encoder.evrc"
     }
@@ -690,11 +562,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxAdpcmDec.so",
-    #else
-    "libmm-adec-omxadpcm.so.1",
-    #endif
     {
       "audio_decoder.adpcm"
     }
@@ -710,11 +578,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxAdpcmDec.so",
-    #else
-    "libmm-adec-omxadpcm.so.1",
-    #endif
     {
       "audio_decoder.adpcm"
     }
@@ -730,11 +594,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxAacEnc.so",
-    #else
-    "libmm-aenc-omxaac.so.1",
-    #endif
     {
       "audio_encoder.aac"
     }
@@ -750,11 +610,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxAacEnc.so",
-    #else
-    "libmm-aenc-omxaac.so.1",
-    #endif
     {
       "audio_encoder.aac"
     }
@@ -770,11 +626,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxQcelp13Enc.so",
-    #else
-    "libmm-aenc-omxqcelp13.so.1",
-    #endif
     {
       "audio_encoder.qcelp13"
     }
@@ -790,11 +642,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxEvrcEnc.so",
-    #else
-    "libmm-aenc-omxevrc.so.1",
-    #endif
     {
       "audio_encoder.evrc"
     }
@@ -810,11 +658,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
     "libOmxAmrEnc.so",
-    #else
-    "libmm-aenc-omxamr.so.1",
-    #endif
     {
       "audio_encoder.amrnb"
     }
