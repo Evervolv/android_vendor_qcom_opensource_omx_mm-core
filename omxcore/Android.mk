@@ -39,17 +39,17 @@ OMXCORE_CFLAGS += -D_ENABLE_QC_MSG_LOG_
 #             Figure out the targets
 #===============================================================================
 
-ifeq "$(findstring qsd8250,$(TARGET_PRODUCT))" "qsd8250"
+ifeq "$(findstring qsd8250,$(QCOM_TARGET_PRODUCT))" "qsd8250"
 MM_CORE_TARGET = 8250
-else ifeq "$(findstring msm7627,$(TARGET_PRODUCT))" "msm7627"
+else ifeq "$(findstring msm7627,$(QCOM_TARGET_PRODUCT))" "msm7627"
 MM_CORE_TARGET = 7627
-else ifeq "$(findstring msm7625,$(TARGET_PRODUCT))" "msm7625"
+else ifeq "$(findstring msm7625,$(QCOM_TARGET_PRODUCT))" "msm7625"
 MM_CORE_TARGET = 7625
-else ifeq "$(findstring msm7630,$(TARGET_PRODUCT))" "msm7630"
+else ifeq "$(findstring msm7630,$(QCOM_TARGET_PRODUCT))" "msm7630"
 MM_CORE_TARGET = 7630
-else ifeq "$(findstring msm8660,$(TARGET_PRODUCT))" "msm8660"
+else ifeq "$(findstring msm8660,$(QCOM_TARGET_PRODUCT))" "msm8660"
 MM_CORE_TARGET = 8660
-else ifeq "$(findstring qsd8650a,$(TARGET_PRODUCT))" "qsd8650a"
+else ifeq "$(findstring qsd8650a,$(QCOM_TARGET_PRODUCT))" "qsd8650a"
 MM_CORE_TARGET =8x50A
 else
 MM_CORE_TARGET = default
