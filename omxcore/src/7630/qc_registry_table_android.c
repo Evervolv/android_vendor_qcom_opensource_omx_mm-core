@@ -87,6 +87,22 @@ omx_core_cb_type core[] =
     }
   },
   {
+    "OMX.qcom.video.decoder.wmv",
+    NULL, // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    "libOmxVdec.so",
+    {
+      "video_decoder.vc1"
+    }
+  },
+  {
     "OMX.qcom.video.decoder.h263",
     NULL, // Create instance function
     // Unique instance handle
@@ -244,6 +260,22 @@ omx_core_cb_type core[] =
     "libDrmPlay.so",
     {
       "drm.play"
+    }
+  },
+  {
+    "OMX.qcom.audio.decoder.wma",
+    NULL, // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    "libOmxWmaDec.so",
+    {
+      "audio_decoder.wma"
     }
   },
 #ifndef _ANDROID_
@@ -437,22 +469,6 @@ omx_core_cb_type core[] =
     "libOmxAmrEnc.so",
     {
       "audio_encoder.amr"
-    }
-  },
-  {
-    "OMX.qcom.audio.decoder.wma",
-    NULL, // Create instance function
-    // Unique instance handle
-    {
-      NULL,
-      NULL,
-      NULL,
-      NULL
-    },
-    NULL,   // Shared object library handle
-    "libOmxWmaDec.so",
-    {
-      "audio_decoder.wma"
     }
   },
   {
