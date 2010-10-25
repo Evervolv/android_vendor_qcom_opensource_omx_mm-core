@@ -317,6 +317,14 @@ enum OMX_QCOM_EXTN_INDEXTYPE
     OMX_QcomIndexParamVideoDecoderPictureOrder = 0x7F000010,
 
     OMX_QcomIndexConfigVideoFramePackingArrangement = 0x7F000011,
+
+    OMX_QcomIndexParamConcealMBMapExtraData = 0x7F000012,
+
+    OMX_QcomIndexParamFrameInfoExtraData = 0x7F000013,
+
+    OMX_QcomIndexParamInterlaceExtraData = 0x7F000014,
+
+    OMX_QcomIndexParamH264TimeInfo = 0x7F000015
 };
 
 /**
@@ -582,15 +590,9 @@ typedef enum OMX_QCOM_EXTRADATATYPE
    OMX_ExtraDataVC1 = 0x7F000003,
    OMX_ExtraDataFrameDimension = 0x7F000004,
    OMX_ExtraDataVideoEncoderSliceInfo = 0x7F000005,
-   OMX_ExtraDataConcealMB = 0x7F000006
+   OMX_ExtraDataConcealMB = 0x7F000006,
+   OMX_ExtraDataInterlaceFormat = 0x7F000007
 } OMX_QCOM_EXTRADATATYPE;
-
-typedef enum OMX_KHRONOS_EXTENTIONS_EXTRADATATYPE
-{
-   OMX_ExtraDataKhronosExtensions_Unused=OMX_ExtraDataKhronosExtensions,
-   OMX_ExtraDataInterlaceFormat,
-}OMX_KHRONOS_EXTENTIONS_EXTRADATA;
-
 
 typedef struct  OMX_STREAMINTERLACEFORMATTYPE {
     OMX_U32 nSize;
