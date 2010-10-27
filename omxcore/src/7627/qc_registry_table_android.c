@@ -258,7 +258,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    "libOmxQcelpDec.so",
+    "libOmxQcelp13Dec.so",
     {
       "audio_decoder.Qcelp13"
     }
