@@ -229,7 +229,23 @@ omx_core_cb_type core[] =
     {
       "audio_encoder.aac"
     }
- },
+  },
+  {
+    "drm.play",
+    NULL, // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,  // Shared object library handle
+    "libDrmPlay.so",
+    {
+      "drm.play"
+    }
+  },
 #ifndef _ANDROID_
   {
      "OMX.qcom.audio.decoder.mp3",
