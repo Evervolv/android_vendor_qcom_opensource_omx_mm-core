@@ -232,6 +232,22 @@ omx_core_cb_type core[] =
     }
   },
   {
+    "OMX.qcom.audio.decoder.Qcelp13Hw",
+    NULL, // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    "libOmxQcelpHwDec.so",
+    {
+      "audio_decoder.Qcelp13"
+    }
+  },
+  {
     "OMX.qcom.audio.decoder.Qcelp13",
     NULL, // Create instance function
     // Unique instance handle
@@ -245,6 +261,22 @@ omx_core_cb_type core[] =
     "libOmxQcelp13Dec.so",
     {
       "audio_decoder.Qcelp13"
+    }
+  },
+  {
+    "OMX.qcom.audio.decoder.evrchw",
+    NULL, // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    "libOmxEvrcHwDec.so",
+    {
+      "audio_decoder.evrc"
     }
   },
   {
@@ -387,7 +419,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    "libOmxQcelpDec.so",
+    "libOmxQcelpHwDec.so",
     {
       "audio_decoder.Qcelp13"
     }
@@ -403,7 +435,7 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    "libOmxEvrcDec.so",
+    "libOmxEvrcHwDec.so",
     {
       "audio_decoder.evrc"
     }
