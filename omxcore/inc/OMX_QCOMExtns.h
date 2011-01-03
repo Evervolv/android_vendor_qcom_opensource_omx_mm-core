@@ -86,6 +86,8 @@ struct OMX_QCOM_PARAM_MEMMAPENTRYTYPE
 
 #define QOMX_VIDEO_IntraRefreshRandom (OMX_VIDEO_IntraRefreshVendorStartUnused + 0)
 
+#define QOMX_VIDEO_BUFFERFLAG_BFRAME 0x00100000
+
 #define OMX_QCOM_PORTDEFN_EXTN   "OMX.QCOM.index.param.portdefn"
 /* Allowed APIs on the above Index: OMX_GetParameter() and OMX_SetParameter() */
 
