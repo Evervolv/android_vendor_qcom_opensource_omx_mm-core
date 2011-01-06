@@ -379,7 +379,7 @@ omx_core_cb_type core[] =
     }
   },
   {
-    "OMX.qcom.audio.decoder.tunneled.Qcelp13",
+    "OMX.qcom.audio.decoder.tunneled.Qcelp13Hw",
     NULL,   // Create instance function
     // Unique instance handle
     {

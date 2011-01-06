@@ -354,6 +354,27 @@ omx_core_cb_type core[] =
     }
   },
   {
+    "OMX.qcom.audio.decoder.Qcelp13Hw",
+    NULL,   // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    #ifdef _ANDROID_
+    "libOmxQcelpHwDec.so",
+    #else
+    "libmm-adec-omxQcelp13.so.1",
+    #endif
+    {
+      "audio_decoder.Qcelp13"
+    }
+  },
+#ifdef _ANDROID_
+  {
     "OMX.qcom.audio.decoder.Qcelp13",
     NULL,   // Create instance function
     // Unique instance handle
@@ -364,17 +385,14 @@ omx_core_cb_type core[] =
       NULL
     },
     NULL,   // Shared object library handle
-    #ifdef _ANDROID_
-    "libOmxQcelpDec.so",
-    #else
-    "libmm-adec-omxQcelp13.so.1",
-    #endif
+    "libOmxQcelp13Dec.so",
     {
       "audio_decoder.Qcelp13"
     }
   },
+#endif
   {
-    "OMX.qcom.audio.decoder.tunneled.Qcelp13",
+    "OMX.qcom.audio.decoder.tunneled.Qcelp13Hw",
     NULL,   // Create instance function
     // Unique instance handle
     {
@@ -385,7 +403,7 @@ omx_core_cb_type core[] =
     },
     NULL,   // Shared object library handle
     #ifdef _ANDROID_
-    "libOmxQcelpDec.so",
+    "libOmxQcelpHwDec.so",
     #else
     "libmm-adec-omxQcelp13.so.1",
     #endif
