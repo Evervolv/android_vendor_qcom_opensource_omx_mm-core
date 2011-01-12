@@ -33,7 +33,7 @@ include $(CLEAR_VARS)
 OMXCORE_CFLAGS := -g -O3 -DVERBOSE
 OMXCORE_CFLAGS += -O0 -fno-inline -fno-short-enums
 OMXCORE_CFLAGS += -D_ANDROID_
-OMXCORE_CFLAGS += -D_ENABLE_QC_MSG_LOG_
+OMXCORE_CFLAGS += -U_ENABLE_QC_MSG_LOG_
 
 #===============================================================================
 #             Figure out the targets
