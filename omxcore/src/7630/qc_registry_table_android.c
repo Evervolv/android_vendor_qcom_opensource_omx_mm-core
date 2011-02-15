@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------------------
-Copyright (c) 2009, Code Aurora Forum. All rights reserved.
+Copyright (c) 2009,2011 Code Aurora Forum. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -296,6 +296,26 @@ omx_core_cb_type core[] =
     #endif
     {
       "audio_encoder.evrc"
+    }
+  },
+  {
+    "OMX.qcom.audio.encoder.qcelp13",
+    NULL,   // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    #ifdef _ANDROID_
+    "libOmxQcelp13Enc.so",
+    #else
+    "libmm-aenc-omxqcelp13.so.1",
+    #endif
+    {
+      "audio_encoder.qcelp13"
     }
   },
 #ifndef _ANDROID_
