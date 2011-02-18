@@ -104,6 +104,22 @@ omx_core_cb_type core[] =
     }
   },
   {
+    "OMX.qcom.video.decoder.real",
+    NULL, // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    "libOmxrv9Dec.so",
+    {
+      "video_decoder.real"
+    }
+  },
+  {
     "OMX.qcom.video.decoder.h263",
     NULL, // Create instance function
     // Unique instance handle
