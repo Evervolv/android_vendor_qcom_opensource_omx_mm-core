@@ -14,6 +14,8 @@ OMXCORE_CFLAGS += -U_ENABLE_QC_MSG_LOG_
 
 ifeq "$(findstring qsd8250,$(QCOM_TARGET_PRODUCT))" "qsd8250"
 MM_CORE_TARGET = 8250
+else ifeq "$(findstring msm7627a,$(QCOM_TARGET_PRODUCT))" "msm7627a"
+MM_CORE_TARGET = 7627A
 else ifeq "$(findstring msm7627,$(QCOM_TARGET_PRODUCT))" "msm7627"
 MM_CORE_TARGET = 7627
 else ifeq "$(findstring msm7625,$(QCOM_TARGET_PRODUCT))" "msm7625"
