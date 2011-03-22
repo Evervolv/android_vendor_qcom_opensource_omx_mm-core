@@ -374,6 +374,26 @@ omx_core_cb_type core[] =
      "audio_decoder.wma"
     }
   },
+  {
+    "OMX.qcom.audio.encoder.evrc",
+    NULL,   // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    #ifdef _ANDROID_
+    "libOmxEvrcEnc.so",
+    #else
+    "libmm-aenc-omxevrc.so.1",
+    #endif
+    {
+      "audio_encoder.evrc"
+    }
+  },
 #ifndef _ANDROID_
   {
     "OMX.qcom.audio.decoder.amrnb",
