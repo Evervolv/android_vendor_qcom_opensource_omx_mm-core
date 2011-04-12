@@ -35,6 +35,7 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 #include "qc_omx_core.h"
+#include "drmplay_version.h"
 
 omx_core_cb_type core[] =
 {
@@ -247,7 +248,7 @@ omx_core_cb_type core[] =
     }
   },
   {
-    "drm.play",
+    "drm.play" DRMPLAY_API_VERSION,
     NULL, // Create instance function
     // Unique instance handle
     {
@@ -259,7 +260,7 @@ omx_core_cb_type core[] =
     NULL,  // Shared object library handle
     "libDrmPlay.so",
     {
-      "drm.play"
+      "drm.play" DRMPLAY_API_VERSION
     }
   },
   {
