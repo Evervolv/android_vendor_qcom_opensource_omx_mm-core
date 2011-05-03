@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------------------
-Copyright (c) 2009, Code Aurora Forum. All rights reserved.
+Copyright (c) 2009-2011, Code Aurora Forum. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -326,7 +326,9 @@ enum OMX_QCOM_EXTN_INDEXTYPE
 
     OMX_QcomIndexParamInterlaceExtraData = 0x7F000014,
 
-    OMX_QcomIndexParamH264TimeInfo = 0x7F000015
+    OMX_QcomIndexParamH264TimeInfo = 0x7F000015,
+
+    OMX_QcomIndexParamIndexExtraDataType = 0x7F000016
 };
 
 /**
@@ -593,7 +595,8 @@ typedef enum OMX_QCOM_EXTRADATATYPE
    OMX_ExtraDataFrameDimension = 0x7F000004,
    OMX_ExtraDataVideoEncoderSliceInfo = 0x7F000005,
    OMX_ExtraDataConcealMB = 0x7F000006,
-   OMX_ExtraDataInterlaceFormat = 0x7F000007
+   OMX_ExtraDataInterlaceFormat = 0x7F000007,
+   OMX_ExtraDataPortDef = 0x7F000008
 } OMX_QCOM_EXTRADATATYPE;
 
 typedef struct  OMX_STREAMINTERLACEFORMATTYPE {
@@ -769,7 +772,16 @@ typedef struct QOMX_VIDEO_DECODER_PICTURE_ORDER {
     QOMX_VIDEO_PICTURE_ORDER eOutputPictureOrder;
 } QOMX_VIDEO_DECODER_PICTURE_ORDER;
 
+typedef struct QOMX_INDEXEXTRADATATYPE {
+    OMX_U32 nSize;
+    OMX_VERSIONTYPE nVersion;
+    OMX_U32 nPortIndex;
+    OMX_BOOL bEnabled;
+    OMX_INDEXTYPE nIndex;
+} QOMX_INDEXEXTRADATATYPE;
+
 #define OMX_QCOM_INDEX_PARAM_VIDEO_SYNCFRAMEDECODINGMODE "OMX.QCOM.index.param.video.SyncFrameDecodingMode"
+#define OMX_QCOM_INDEX_PARAM_INDEXEXTRADATA "OMX.QCOM.index.param.IndexExtraData"
 
 #ifdef __cplusplus
 }
