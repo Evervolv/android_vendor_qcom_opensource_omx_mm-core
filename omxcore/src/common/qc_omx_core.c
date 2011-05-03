@@ -43,13 +43,14 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #include <unistd.h>
 #include <string.h>
 #include <stdio.h>
+#include <pthread.h>
 
 #include "qc_omx_core.h"
 #include "omx_core_cmp.h"
 
 extern omx_core_cb_type core[];
 extern const unsigned int SIZE_OF_CORE;
-
+static pthread_mutex_t lock_core = PTHREAD_MUTEX_INITIALIZER;
 
 /* ======================================================================
 FUNCTION
@@ -370,27 +371,6 @@ RETURN VALUE
 OMX_API OMX_ERRORTYPE OMX_APIENTRY
 OMX_Deinit()
 {
-  int err;
-  unsigned i=0,j=0;
-  OMX_ERRORTYPE eRet;
-
-  /* Free the dangling handles here if any */
-  for(i=0; i< SIZE_OF_CORE; i++)
-  {
-    for(j=0; j< OMX_COMP_MAX_INST; j++)
-    {
-      if(core[i].inst[j])
-      {
-        DEBUG_PRINT("OMX DeInit: Freeing handle for %s\n",
-                     core[i].name);
-
-        /* Release the component and unload dynmaic library */
-        eRet = OMX_FreeHandle(core[i].inst[j]);
-        if(eRet != OMX_ErrorNone)
-          return eRet;
-      }
-    }
-  }
   return OMX_ErrorNone;
 }
 
@@ -421,6 +401,7 @@ OMX_GetHandle(OMX_OUT OMX_HANDLETYPE*     handle,
   DEBUG_PRINT("OMXCORE API :  Get Handle %x %s %x\n",(unsigned) handle,
                                                      componentName,
                                                      (unsigned) appData);
+  pthread_mutex_lock(&lock_core);
   if(handle)
   {
     struct stat sd;
@@ -451,6 +432,7 @@ OMX_GetHandle(OMX_OUT OMX_HANDLETYPE*     handle,
                            OMX_ErrorNone)
           {
               DEBUG_PRINT("Component not created succesfully\n");
+              pthread_mutex_unlock(&lock_core);
               return eRet;
 
           }
@@ -463,6 +445,7 @@ OMX_GetHandle(OMX_OUT OMX_HANDLETYPE*     handle,
           else
           {
             DEBUG_PRINT("OMX_GetHandle:NO free slot available to store Component Handle\n");
+            pthread_mutex_unlock(&lock_core);
             return OMX_ErrorInsufficientResources;
           }
           DEBUG_PRINT("Component %x Successfully created\n",(unsigned)*handle);
@@ -491,6 +474,7 @@ OMX_GetHandle(OMX_OUT OMX_HANDLETYPE*     handle,
     eRet =  OMX_ErrorBadParameter;
     DEBUG_PRINT("\n OMX_GetHandle: NULL handle \n");
   }
+  pthread_mutex_unlock(&lock_core);
   return eRet;
 }
 /* ======================================================================
@@ -513,6 +497,7 @@ OMX_FreeHandle(OMX_IN OMX_HANDLETYPE hComp)
   int err = 0, i = 0;
   DEBUG_PRINT("OMXCORE API :  Free Handle %x\n",(unsigned) hComp);
 
+  pthread_mutex_lock(&lock_core);
   // 0. Check that we have an active instance
   if((i=is_cmp_handle_exists(hComp)) >=0)
   {
@@ -540,6 +525,7 @@ OMX_FreeHandle(OMX_IN OMX_HANDLETYPE hComp)
     else
     {
     DEBUG_PRINT(" OMX_FreeHandle failed on %x\n",(unsigned) hComp);
+        pthread_mutex_unlock(&lock_core);
         return eRet;
     }
   }
@@ -547,6 +533,7 @@ OMX_FreeHandle(OMX_IN OMX_HANDLETYPE hComp)
   {
     DEBUG_PRINT_ERROR("OMXCORE Warning: Free Handle called with no active instances\n");
   }
+  pthread_mutex_unlock(&lock_core);
   return OMX_ErrorNone;
 }
 /* ======================================================================
