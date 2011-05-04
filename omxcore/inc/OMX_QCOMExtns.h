@@ -328,7 +328,11 @@ enum OMX_QCOM_EXTN_INDEXTYPE
 
     OMX_QcomIndexParamH264TimeInfo = 0x7F000015,
 
-    OMX_QcomIndexParamIndexExtraDataType = 0x7F000016
+    OMX_QcomIndexParamIndexExtraDataType = 0x7F000016,
+
+    OMX_GoogleAndroidIndexEnableAndroidNativeBuffers = 0x7F000017,
+
+    OMX_GoogleAndroidIndexUseAndroidNativeBuffer = 0x7F000018
 };
 
 /**
