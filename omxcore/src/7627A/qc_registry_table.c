@@ -213,6 +213,26 @@ omx_core_cb_type core[] =
       "video_decoder.vp"
     }
   },
+ {
+     "OMX.qcom.video.decoder.vp8",
+     NULL,   // Create instance function
+     // Unique instance handle
+     {
+       NULL,
+       NULL,
+       NULL,
+       NULL
+     },
+     NULL,   // Shared object library handle
+     #ifdef _ANDROID_
+     "libOmxVp8Dec.so",
+     #else
+     "libOmxVp8Dec.so",
+     #endif
+     {
+       "video_decoder.vp8"
+     }
+  },
    {
     "OMX.qcom.video.encoder.h263",
     NULL,   // Create instance function
