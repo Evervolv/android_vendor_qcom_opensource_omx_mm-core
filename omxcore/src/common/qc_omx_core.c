@@ -202,6 +202,7 @@ static int is_cmp_handle_exists(OMX_HANDLETYPE inst)
   if(NULL == inst)
      return rc;
 
+  pthread_mutex_lock(&lock_core);
   for(i=0; i< SIZE_OF_CORE; i++)
   {
     for(j=0; j< OMX_COMP_MAX_INST; j++)
@@ -209,10 +210,12 @@ static int is_cmp_handle_exists(OMX_HANDLETYPE inst)
       if(inst == core[i].inst[j])
       {
         rc = i;
-        return rc;
+        goto finish;
       }
     }
   }
+finish:
+  pthread_mutex_unlock(&lock_core);
   return rc;
 }
 
@@ -497,13 +500,13 @@ OMX_FreeHandle(OMX_IN OMX_HANDLETYPE hComp)
   int err = 0, i = 0;
   DEBUG_PRINT("OMXCORE API :  Free Handle %x\n",(unsigned) hComp);
 
-  pthread_mutex_lock(&lock_core);
   // 0. Check that we have an active instance
   if((i=is_cmp_handle_exists(hComp)) >=0)
   {
     // 1. Delete the component
     if ((eRet = qc_omx_component_deinit(hComp)) == OMX_ErrorNone)
     {
+        pthread_mutex_lock(&lock_core);
         /* Unload component library */
     if( (i < SIZE_OF_CORE) && core[i].so_lib_handle)
     {
@@ -521,11 +524,11 @@ OMX_FreeHandle(OMX_IN OMX_HANDLETYPE hComp)
            }
     }
     clear_cmp_handle(hComp);
+    pthread_mutex_unlock(&lock_core);
     }
     else
     {
     DEBUG_PRINT(" OMX_FreeHandle failed on %x\n",(unsigned) hComp);
-        pthread_mutex_unlock(&lock_core);
         return eRet;
     }
   }
@@ -533,7 +536,6 @@ OMX_FreeHandle(OMX_IN OMX_HANDLETYPE hComp)
   {
     DEBUG_PRINT_ERROR("OMXCORE Warning: Free Handle called with no active instances\n");
   }
-  pthread_mutex_unlock(&lock_core);
   return OMX_ErrorNone;
 }
 /* ======================================================================
