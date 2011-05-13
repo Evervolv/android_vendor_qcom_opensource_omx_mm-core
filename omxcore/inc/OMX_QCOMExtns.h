@@ -333,7 +333,9 @@ enum OMX_QCOM_EXTN_INDEXTYPE
 
     OMX_GoogleAndroidIndexEnableAndroidNativeBuffers = 0x7F000017,
 
-    OMX_GoogleAndroidIndexUseAndroidNativeBuffer = 0x7F000018
+    OMX_GoogleAndroidIndexUseAndroidNativeBuffer = 0x7F000018,
+
+    OMX_GoogleAndroidIndexGetAndroidNativeBufferUsage = 0x7F000019
 };
 
 /**
