@@ -166,6 +166,22 @@ omx_core_cb_type core[] =
       "video_decoder.vp"
     }
   },
+  {
+     "OMX.qcom.video.decoder.vp8",
+     NULL,   // Create instance function
+     // Unique instance handle
+     {
+       NULL,
+       NULL,
+       NULL,
+       NULL
+     },
+     NULL,   // Shared object library handle
+     "libOmxVp8Dec.so",
+     {
+       "video_decoder.vp8"
+     }
+   },
    {
     "OMX.qcom.video.encoder.mpeg4",
     NULL, // Create instance function
