@@ -335,7 +335,10 @@ enum OMX_QCOM_EXTN_INDEXTYPE
 
     OMX_GoogleAndroidIndexUseAndroidNativeBuffer = 0x7F000018,
 
-    OMX_GoogleAndroidIndexGetAndroidNativeBufferUsage = 0x7F000019
+    OMX_GoogleAndroidIndexGetAndroidNativeBufferUsage = 0x7F000019,
+
+    /*"OMX.QCOM.index.config.video.QPRange" */
+    OMX_QcomIndexConfigVideoQPRange = 0x7F00001A
 };
 
 /**
