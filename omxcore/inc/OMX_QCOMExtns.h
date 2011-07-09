@@ -338,7 +338,10 @@ enum OMX_QCOM_EXTN_INDEXTYPE
     OMX_GoogleAndroidIndexGetAndroidNativeBufferUsage = 0x7F000019,
 
     /*"OMX.QCOM.index.config.video.QPRange" */
-    OMX_QcomIndexConfigVideoQPRange = 0x7F00001A
+    OMX_QcomIndexConfigVideoQPRange = 0x7F00001A,
+
+    /*"OMX.QCOM.index.param.EnableTimeStampReoder"*/
+    OMX_QcomIndexParamEnableTimeStampReorder = 0x7F00001B
 };
 
 /**
@@ -789,6 +792,13 @@ typedef struct QOMX_INDEXEXTRADATATYPE {
     OMX_BOOL bEnabled;
     OMX_INDEXTYPE nIndex;
 } QOMX_INDEXEXTRADATATYPE;
+
+typedef struct QOMX_INDEXTIMESTAMPREORDER {
+	OMX_U32 nSize;
+	OMX_VERSIONTYPE nVersion;
+	OMX_U32 nPortIndex;
+	OMX_BOOL bEnable;
+};
 
 #define OMX_QCOM_INDEX_PARAM_VIDEO_SYNCFRAMEDECODINGMODE "OMX.QCOM.index.param.video.SyncFrameDecodingMode"
 #define OMX_QCOM_INDEX_PARAM_INDEXEXTRADATA "OMX.QCOM.index.param.IndexExtraData"
