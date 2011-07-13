@@ -60,6 +60,7 @@ extern "C"
 #define OMX_QCOM_INDEX_PARAM_WMA10PRO        "OMX.Qualcomm.index.audio.wma10pro"
 #define OMX_QCOM_INDEX_PARAM_SESSIONID       "OMX.Qualcomm.index.audio.sessionId"
 #define OMX_QCOM_INDEX_PARAM_VOICERECORDTYPE "OMX.Qualcomm.index.audio.VoiceRecord"
+#define OMX_QCOM_INDEX_CONFIG_DUALMONO       "OMX.Qualcomm.index.audio.dualmono"
 
 typedef enum QOMX_AUDIO_AMRBANDMODETYPE {
     QOMX_AUDIO_AMRBandModeWB9              = 0x7F000001,/**< AMRWB Mode 9 = SID*/
@@ -172,8 +173,32 @@ OMX_VERSIONTYPE                    nVersion;
 QOMX_AUDIO_VOICERECORDMODETYPE     eVoiceRecordMode;
 }  QOMX_AUDIO_CONFIG_VOICERECORDTYPE;
 
+/* Enum for mapping dual-mono contents to left and right channels */
+typedef enum OMX_AUDIO_DUAL_MONO_CHANNEL_CONFIG {
+ OMX_AUDIO_DUAL_MONO_MODE_FL_FR,/* 1st SCE to left & right */
+ OMX_AUDIO_DUAL_MONO_MODE_SL_SR,/* 2nd SCE to left & right */
+ OMX_AUDIO_DUAL_MONO_MODE_SL_FR,/* 2nd SCE to left, 1st SCE to right */
+ OMX_AUDIO_DUAL_MONO_MODE_FL_SR,/* 1st SCE to left, 2nd SCE to right default */
+ OMX_AUDIO_DUAL_MONO_MODE_DEFAULT = OMX_AUDIO_DUAL_MONO_MODE_FL_SR,
+ OMX_AUDIO_DUAL_MONO_MODE_INVALID = -1
+} OMX_AUDIO_DUAL_MONO_CHANNEL_CONFIG;
 
-
+/**
+ * DUAL-MONO type
+ *
+ *  STRUCT MEMBERS:
+ *  nSize               : Size of the structure in bytes
+ *  nVersion            : OMX specification version information
+ *  nPortIndex          : Port that this structure applies to
+ *  eChannelConfig      : Enum for channel config
+ *
+ */
+typedef struct QOMX_AUDIO_CONFIG_DUALMONOTYPE {
+   OMX_U32 nSize;
+   OMX_VERSIONTYPE nVersion;
+   OMX_U32 nPortIndex;
+   OMX_AUDIO_DUAL_MONO_CHANNEL_CONFIG eChannelConfig;
+} QOMX_AUDIO_CONFIG_DUALMONOTYPE;
 
 #if defined( __cplusplus )
 }
