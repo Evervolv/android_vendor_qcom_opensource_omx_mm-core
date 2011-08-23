@@ -572,6 +572,7 @@ typedef struct OMX_QCOM_EXTRADATA_FRAMEINFO
    OMX_QCOM_INTERLACETYPE interlaceType;
    OMX_QCOM_PANSCAN       panScan;
    OMX_U32                nConcealedMacroblocks;
+   OMX_U32                nFrameRate;
 } OMX_QCOM_EXTRADATA_FRAMEINFO;
 
 typedef struct OMX_QCOM_EXTRADATA_FRAMEDIMENSION
