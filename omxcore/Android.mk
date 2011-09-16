@@ -14,17 +14,17 @@ OMXCORE_CFLAGS += -U_ENABLE_QC_MSG_LOG_
 
 ifeq "$(findstring qsd8250,$(QCOM_TARGET_PRODUCT))" "qsd8250"
 MM_CORE_TARGET = 8250
-else ifeq "$(findstring msm7627a,$(QCOM_TARGET_PRODUCT))" "msm7627a"
+else ifeq ($(call is-board-platform,msm7627a),true)
 MM_CORE_TARGET = 7627A
-else ifeq "$(findstring msm7627,$(QCOM_TARGET_PRODUCT))" "msm7627"
+else ifeq ($(call is-board-platform,msm7627_surf),true)
 MM_CORE_TARGET = 7627
 else ifeq "$(findstring msm7625,$(QCOM_TARGET_PRODUCT))" "msm7625"
 MM_CORE_TARGET = 7625
-else ifeq "$(findstring msm7630,$(QCOM_TARGET_PRODUCT))" "msm7630"
+else ifeq ($(call is-chipset-in-board-platform,msm7630),true)
 MM_CORE_TARGET = 7630
-else ifeq "$(findstring msm8660,$(QCOM_TARGET_PRODUCT))" "msm8660"
+else ifeq ($(call is-board-platform,msm8660),true)
 MM_CORE_TARGET = 8660
-else ifeq "$(findstring msm8960,$(QCOM_TARGET_PRODUCT))" "msm8960"
+else ifeq ($(call is-board-platform,msm8960),true)
 MM_CORE_TARGET = 8960
 else ifeq "$(findstring qsd8650a,$(QCOM_TARGET_PRODUCT))" "qsd8650a"
 MM_CORE_TARGET =8x50A
