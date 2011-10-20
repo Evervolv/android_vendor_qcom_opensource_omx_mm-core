@@ -37,7 +37,9 @@ IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
 #include "qc_omx_core.h"
+#ifdef ENABLE_DRMPLAY
 #include "drmplay_version.h"
+#endif
 
 omx_core_cb_type core[] =
 {
@@ -393,6 +395,7 @@ omx_core_cb_type core[] =
       "audio_decoder.aac"
     }
   },
+#ifdef ENABLE_DRMPLAY
   {
     "drm.play" DRMPLAY_API_VERSION,
     NULL, // Create instance function
@@ -409,6 +412,7 @@ omx_core_cb_type core[] =
       "drm.play" DRMPLAY_API_VERSION
     }
   }
+#endif
 };
 
 const unsigned int SIZE_OF_CORE = sizeof(core) / sizeof(omx_core_cb_type);

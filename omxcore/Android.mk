@@ -22,6 +22,8 @@ else ifeq ($(call is-chipset-in-board-platform,msm7630),true)
 MM_CORE_TARGET = 7630
 else ifeq ($(call is-board-platform,msm8660),true)
 MM_CORE_TARGET = 8660
+#Comment out following line to disable drm.play component
+OMXCORE_CFLAGS += -DENABLE_DRMPLAY
 else ifeq ($(call is-board-platform,msm8960),true)
 MM_CORE_TARGET = 8960
 else
