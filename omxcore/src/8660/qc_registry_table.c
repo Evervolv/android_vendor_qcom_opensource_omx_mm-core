@@ -568,6 +568,23 @@ omx_core_cb_type core[] =
     }
   },
   {
+    "OMX.qcom.file.muxer",
+    NULL,   // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+
+    "libOmxMux.so",
+    {
+      "container_muxer.mp2"
+    }
+},
+  {
     "OMX.qcom.audio.encoder.tunneled.aac",
     NULL,   // Create instance function
     // Unique instance handle

@@ -411,6 +411,22 @@ omx_core_cb_type core[] =
     {
       "drm.play" DRMPLAY_API_VERSION
     }
+  },
+  {
+    "OMX.qcom.file.muxer",
+    NULL, // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    "libOmxMux.so",
+    {
+      "container_muxer.mp2"
+    }
   }
 #endif
 };
