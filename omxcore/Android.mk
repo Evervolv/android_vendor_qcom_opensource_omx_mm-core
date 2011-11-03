@@ -16,6 +16,8 @@ ifeq ($(call is-board-platform,msm7627a),true)
 MM_CORE_TARGET = 7627A
 else ifeq ($(call is-board-platform,msm7627_surf),true)
 MM_CORE_TARGET = 7627
+else ifeq ($(call is-board-platform,msm7627_6x),true)
+MM_CORE_TARGET = 7627
 else ifeq ($(call is-chipset-in-board-platform,msm7630),true)
 MM_CORE_TARGET = 7630
 else ifeq ($(call is-board-platform,msm8660),true)
