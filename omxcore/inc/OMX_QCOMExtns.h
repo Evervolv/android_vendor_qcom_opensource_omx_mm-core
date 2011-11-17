@@ -540,6 +540,12 @@ typedef struct OMX_QCOM_PANSCAN
    OMX_QCOMRectangle window[MAX_PAN_SCAN_WINDOWS];
 } OMX_QCOM_PANSCAN;
 
+typedef struct OMX_QCOM_ASPECT_RATIO
+{
+   OMX_U32 aspectRatioX;
+   OMX_U32 aspectRatioY;
+} OMX_QCOM_ASPECT_RATIO;
+
 typedef struct OMX_QCOM_FRAME_PACK_ARRANGEMENT
 {
   OMX_U32 nSize;
@@ -571,6 +577,7 @@ typedef struct OMX_QCOM_EXTRADATA_FRAMEINFO
    OMX_VIDEO_PICTURETYPE  ePicType;
    OMX_QCOM_INTERLACETYPE interlaceType;
    OMX_QCOM_PANSCAN       panScan;
+   OMX_QCOM_ASPECT_RATIO  aspectRatio;
    OMX_U32                nConcealedMacroblocks;
    OMX_U32                nFrameRate;
 } OMX_QCOM_EXTRADATA_FRAMEINFO;
