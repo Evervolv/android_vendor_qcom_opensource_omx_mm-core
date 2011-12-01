@@ -343,7 +343,10 @@ enum OMX_QCOM_EXTN_INDEXTYPE
     OMX_QcomIndexConfigVideoQPRange = 0x7F00001A,
 
     /*"OMX.QCOM.index.param.EnableTimeStampReoder"*/
-    OMX_QcomIndexParamEnableTimeStampReorder = 0x7F00001B
+    OMX_QcomIndexParamEnableTimeStampReorder = 0x7F00001B,
+
+    /*"OMX.google.android.index.storeMetaDataInBuffers"*/
+    OMX_QcomIndexParamVideoEncodeMetaBufferMode = 0x7F00001C
 };
 
 /**
