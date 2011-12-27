@@ -51,6 +51,12 @@ LOCAL_COPY_HEADERS      += inc/qc_omx_component.h
 LOCAL_COPY_HEADERS      += inc/qc_omx_msg.h
 LOCAL_COPY_HEADERS      += inc/QOMX_AudioExtensions.h
 LOCAL_COPY_HEADERS      += inc/QOMX_AudioIndexExtensions.h
+LOCAL_COPY_HEADERS      += inc/OMX_CoreExt.h
+LOCAL_COPY_HEADERS      += inc/QOMX_CoreExtensions.h
+LOCAL_COPY_HEADERS      += inc/QOMX_FileFormatExtensions.h
+LOCAL_COPY_HEADERS      += inc/QOMX_IVCommonExtensions.h
+LOCAL_COPY_HEADERS      += inc/QOMX_SourceExtensions.h
+LOCAL_COPY_HEADERS      += inc/QOMX_VideoExtensions.h
 
 
 #===============================================================================
