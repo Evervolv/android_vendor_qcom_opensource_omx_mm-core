@@ -408,6 +408,22 @@ omx_core_cb_type core[] =
       "audio_decoder.aac"
     }
   },
+ {
+    "OMX.qcom.audio.decoder.multiaac",
+    NULL,   // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    "libOmxAacDec.so",
+    {
+      "audio_decoder.aac"
+    }
+  },
   {
     "drm.play",
     NULL, // Create instance function
