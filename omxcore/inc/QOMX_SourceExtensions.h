@@ -1,5 +1,5 @@
 /*--------------------------------------------------------------------------
-Copyright (c) 2011 Code Aurora Forum. All rights reserved.
+Copyright (c) 2011-2012 Code Aurora Forum. All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions are met:
@@ -29,21 +29,21 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #ifndef __H_QOMX_SOURCEEXTENSIONS_H__
 #define __H_QOMX_SOURCEEXTENSIONS_H__
 /*========================================================================
-*//** @file QOMX_SourceExtensions.h 
+*//** @file QOMX_SourceExtensions.h
 
 @par FILE SERVICES:
     Qualcomm extensions API for OpenMax IL demuxer component.
 
     This file contains the description of the Qualcomm OpenMax IL
-    demuxer component extention interface, through which the IL client and 
+    demuxer component extention interface, through which the IL client and
     OpenMax components can access additional capabilities of the demuxer.
 
 *//*====================================================================== */
 
- 
-/*======================================================================== 
-                     INCLUDE FILES FOR MODULE 
-========================================================================== */ 
+
+/*========================================================================
+                     INCLUDE FILES FOR MODULE
+========================================================================== */
 #include <OMX_Core.h>
 /*========================================================================
                       DEFINITIONS AND DECLARATIONS
@@ -53,20 +53,22 @@ ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 extern "C"
 {
 #endif /* end of macro __cplusplus */
+/* Frame size query supported extension string */
+#define OMX_QCOM_INDEX_PARAM_FRAMESIZEQUERYSUPPORTED       "OMX.QCOM.index.param.FrameSizeQuerySupported"      /**< reference: QOMX_FRAMESIZETYPE */
 
-/* Content interface extension strings */ 
+/* Content interface extension strings */
 #define OMX_QCOM_INDEX_PARAM_CONTENTINTERFACE_IXSTREAM     "OMX.QCOM.index.param.contentinterface.ixstream"    /**< reference: QOMX_CONTENTINTERFACETYPE*/
 #define OMX_QCOM_INDEX_PARAM_CONTENTINTERFACE_ISTREAMPORT  "OMX.QCOM.index.param.contentinterface.istreamport" /**< reference: QOMX_CONTENTINTERFACETYPE*/
 
 /* Source seek access extension string */
-#define OMX_QCOM_INDEX_PARAM_SEEK_ACCESS		    "OMX.QCOM.index.param.SeekAccess"                   /**< reference: QOMX_PARAM_SEEKACCESSTYPE*/
+#define OMX_QCOM_INDEX_PARAM_SEEK_ACCESS            "OMX.QCOM.index.param.SeekAccess"                   /**< reference: QOMX_PARAM_SEEKACCESSTYPE*/
 
 /* Media duration extension string*/
 #define OMX_QCOM_INDEX_CONFIG_MEDIADURATION                "OMX.QCOM.index.config.MediaDuration"               /**< reference: OMX_TIME_CONFIG_MEDIADURATIONTYPE*/
 
-/** 
+/**
  *  Data interface Params
- * 
+ *
  *  STRUCT MEMBERS:
  *  nSize          : Size of the structure in bytes
  *  nVersion       : OMX specification version information
@@ -103,7 +105,7 @@ typedef struct QOMX_PARAM_SEEKACCESSTYPE {
  *  nSize          : Size of the structure in bytes
  *  nVersion       : OMX specification version information
  *  nPortIndex     : Index of port
- *  nDuration      : Total duration of the media 
+ *  nDuration      : Total duration of the media
 */
 typedef struct OMX_TIME_CONFIG_MEDIADURATIONTYPE {
     OMX_U32 nSize;
@@ -111,6 +113,42 @@ typedef struct OMX_TIME_CONFIG_MEDIADURATIONTYPE {
     OMX_U32 nPortIndex;
     OMX_TICKS nDuration;
 } OMX_TIME_CONFIG_MEDIADURATIONTYPE;
+
+/**
+ *  The parameters for QOMX_FRAMESIZETYPE are defined as
+ *  follows:
+ *
+ *  STRUCT MEMBERS:
+ *  nSize           : Size of the structure in bytes
+ *  nVersion        : OMX specification version information
+ *  nPortIndex      : Represents the port that this structure
+ *                    applies to
+ *  sFrameSize      : Indicates the size of the frame
+ *  nFrameSizeIndex : Enumerates the possible frame sizes for
+ *                    the given session/URL configuration. The
+ *                    caller specifies all fields and the
+ *                    OMX_GetParameter call returns the value of
+ *                    the frame size. The value of
+ *                    nFrameSizeIndex goes from 0 to N-1, where
+ *                    N is the number of frame sizes that may be
+ *                    emitted by the port. The port does not
+ *                    need to report N as the caller can
+ *                    determine N by enumerating all the frame
+ *                    sizes supported by the port. If the port
+ *                    does not have advance knowledge of the
+ *                    possible frame sizes, it may report no
+ *                    frame sizes. If there are no more frame
+ *                    sizes, OMX_GetParameter returns
+ *                    OMX_ErrorNoMore.
+ */
+typedef struct QOMX_FRAMESIZETYPE
+{
+  OMX_U32 nSize;
+  OMX_VERSIONTYPE nVersion;
+  OMX_U32 nPortIndex;
+  OMX_FRAMESIZETYPE sFrameSize;
+  OMX_U32 nFrameSizeIndex;
+} QOMX_FRAMESIZETYPE;
 
 #if defined( __cplusplus )
 }
