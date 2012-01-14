@@ -58,6 +58,22 @@ omx_core_cb_type core[] =
     }
   },
   {
+    "OMX.ittiam.video.decoder.avc",
+    NULL, // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    "libOmxIttiamVdec.so",
+    {
+      "video_decoder.avc"
+    }
+  },
+  {
     "OMX.qcom.video.decoder.mpeg4",
     NULL,   // Create instance function
     // Unique instance handle
@@ -73,6 +89,22 @@ omx_core_cb_type core[] =
     #else
     "libmm-vdec-omxmp4.so.1",
     #endif
+    {
+      "video_decoder.mpeg4"
+    }
+  },
+  {
+    "OMX.ittiam.video.decoder.mpeg4",
+    NULL, // Create instance function
+    // Unique instance handle
+    {
+      NULL,
+      NULL,
+      NULL,
+      NULL
+    },
+    NULL,   // Shared object library handle
+    "libOmxIttiamVdec.so",
     {
       "video_decoder.mpeg4"
     }
