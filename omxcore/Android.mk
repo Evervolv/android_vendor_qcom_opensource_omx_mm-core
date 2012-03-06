@@ -12,19 +12,19 @@ OMXCORE_CFLAGS += -U_ENABLE_QC_MSG_LOG_
 #             Figure out the targets
 #===============================================================================
 
-ifeq ($(call is-board-platform,msm7627a),true)
+ifeq ($(TARGET_BOARD_PLATFORM),msm7x27a)
 MM_CORE_TARGET = 7627A
-else ifeq ($(call is-board-platform,msm7627_surf),true)
+else ifeq ($(TARGET_BOARD_PLATFORM),msm7x27)
 MM_CORE_TARGET = 7627
-else ifeq ($(call is-board-platform,msm7627_6x),true)
-MM_CORE_TARGET = 7627
-else ifeq ($(call is-chipset-in-board-platform,msm7630),true)
+else ifeq ($(TARGET_BOARD_PLATFORM),msm7x30)
 MM_CORE_TARGET = 7630
-else ifeq ($(call is-board-platform,msm8660),true)
+else ifeq ($(TARGET_BOARD_PLATFORM),qsd8k)
+MM_CORE_TARGET = 8250
+else ifeq ($(TARGET_BOARD_PLATFORM),msm8660)
 MM_CORE_TARGET = 8660
-#Comment out following line to disable drm.play component
+# Comment out following line to disable drm.play component
 OMXCORE_CFLAGS += -DENABLE_DRMPLAY
-else ifeq ($(call is-board-platform,msm8960),true)
+else ifeq ($(TARGET_BOARD_PLATFORM),msm8960)
 MM_CORE_TARGET = 8960
 else
 MM_CORE_TARGET = default
